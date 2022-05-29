@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var paises = ViewData["paises"] as List<Pais>;
+}
+
+
+<h2>Países</h2>
+
+<br />
+<br />
+<input type="button" class="btn btn-success" onclick="location.href='@Url.Action("NuevoPais", "Home")'" value="Nuevo País" />
+<br />
+<div class="table-responsive" style="margin-top: 20px;">
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pais p in paises)
+            {
+                <tr>
+                    <th>@p.Id</th>
+                    <th>@p.Nombre</th>
+                    <th><button type="button" class="btn btn-info" onclick="EditarPais(@p.Id)">Editar</button></th>
+                    <th><button type="button" class="btn btn-danger" onclick="EliminarPais(@p.Id, '@p.Nombre')">Eliminar</button></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
