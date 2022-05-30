@@ -20,7 +20,7 @@ namespace BDRPracticaWeb
         {
             client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://localhost:44314/data/");
+            client.BaseAddress = new Uri("https://bdrpracticaapi20220530191625.azurewebsites.net/data/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
